@@ -6,13 +6,21 @@ env/
 
 # Dependencies
 node_modules/
+frontend/node_modules/
 new_frontend/node_modules/
 package-lock.json.bak
+.pnp
+.pnp.js
 
-# Build artifacts
+# Build artifacts & outputs
 dist/
-new_frontend/dist/
 build/
+out/
+frontend/dist/
+new_frontend/dist/
+.next/
+.turbo/
+.vite/
 
 # Python cache & bytecode
 __pycache__/
@@ -21,16 +29,33 @@ __pycache__/
 *.so
 .pytest_cache/
 
-# Environment Variables
+# Environment Variables & Secrets
 .env
+.env.*
 !.env.example
+*.pem
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+*.log
 
 # OS & Editor
 .DS_Store
 Thumbs.db
 .vscode/
 .idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
 
 # Vercel & Deployment
 .vercel/
-*.log
+
+# Documentation / local files
+documents/
