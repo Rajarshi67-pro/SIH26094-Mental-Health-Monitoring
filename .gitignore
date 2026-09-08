@@ -1,0 +1,36 @@
+# Environments & Virtualenv
+.venv/
+venv/
+ENV/
+env/
+
+# Dependencies
+node_modules/
+frontend/node_modules/
+package-lock.json.bak
+
+# Build artifacts
+dist/
+frontend/dist/
+build/
+
+# Python cache & bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+
+# Environment Variables
+.env
+!.env.example
+
+# OS & Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Vercel & Deployment
+.vercel/
+*.log
