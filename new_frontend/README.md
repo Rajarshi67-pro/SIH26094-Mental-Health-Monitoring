@@ -7,7 +7,7 @@ Production-ready **React + Vite** frontend client for **AI-Powered Dynamic Menta
 ## 📁 Standard Architecture & Folder Structure
 
 ```
-frontend/
+new_frontend/
 ├── src/
 │   ├── config/
 │   │   └── api.config.js          # Backend API URLs & endpoints map (http://localhost:8000/api/v1)
@@ -46,7 +46,7 @@ frontend/
 
 ### 1. Install Dependencies
 ```bash
-cd /Users/rajarshichatterjee/Desktop/Mental/frontend
+cd /Users/rajarshichatterjee/Desktop/Mental/new_frontend
 npm install
 ```
 

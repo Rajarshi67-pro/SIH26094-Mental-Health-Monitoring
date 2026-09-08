@@ -36,7 +36,7 @@ Mental/
 │   │   └── services/        # AI & Emergency dispatch services
 │   ├── server.py            # Local backend server runner
 │   └── test_e2e.py          # End-to-end integration test suite
-├── frontend/                 # React 19 + Vite Application
+├── new_frontend/             # React 19 + Vite Application
 │   ├── src/
 │   │   ├── components/      # UI components (AssessmentForm, ObserverDashboard, etc.)
 │   │   ├── context/         # AuthContext & useAuth hook
@@ -67,7 +67,7 @@ python3 server.py
 ### 2. Frontend Setup
 
 ```bash
-cd frontend
+cd new_frontend
 npm install
 npm run dev
 ```
@@ -81,7 +81,7 @@ The project includes `vercel.json` configured for seamless deployment:
 1. Push repository to GitHub.
 2. In the Vercel Dashboard, click **Add New Project** and import the repository.
 3. Vercel automatically detects Vite:
-   - **Build Command**: `npm --prefix frontend run build`
-   - **Output Directory**: `frontend/dist`
-   - **Install Command**: `npm --prefix frontend install`
+   - **Build Command**: `npm --prefix new_frontend run build`
+   - **Output Directory**: `new_frontend/dist`
+   - **Install Command**: `npm --prefix new_frontend install`
 4. Click **Deploy**.

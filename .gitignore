@@ -6,12 +6,12 @@ env/
 
 # Dependencies
 node_modules/
-frontend/node_modules/
+new_frontend/node_modules/
 package-lock.json.bak
 
 # Build artifacts
 dist/
-frontend/dist/
+new_frontend/dist/
 build/
 
 # Python cache & bytecode
