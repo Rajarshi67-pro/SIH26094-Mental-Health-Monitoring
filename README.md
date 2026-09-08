@@ -36,14 +36,19 @@ Mental/
 │   │   └── services/        # AI & Emergency dispatch services
 │   ├── server.py            # Local backend server runner
 │   └── test_e2e.py          # End-to-end integration test suite
-├── new_frontend/             # React 19 + Vite Application
+├── new_frontend/             # Production React 19 + Vite Application (Vercel Deployed)
 │   ├── src/
 │   │   ├── components/      # UI components (AssessmentForm, ObserverDashboard, etc.)
 │   │   ├── context/         # AuthContext & useAuth hook
 │   │   ├── services/        # API service layers
-│   │   ├── styles/          # Modern CSS styling (100% black text theme)
+│   │   ├── styles/          # Modern CSS styling (100% black text theme, vibrant accents)
 │   │   └── utils/           # Local storage & client validators
 │   └── vercel.json          # Vercel SPA routing
+├── frontend/                 # Prototype React + TypeScript Components (from proto branch)
+│   └── src/
+│       └── components/      # Victim, observer, and analytics prototype widgets
+├── SIH_26094_System_Design.md# Comprehensive System Architecture & Engineering Specs
+├── architechtur.md           # High-level architecture documentation
 ├── server.py                 # Root backend launcher
 ├── vercel.json               # Root monorepo Vercel configuration
 └── .gitignore                # Git exclusion rules
