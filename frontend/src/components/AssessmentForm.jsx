@@ -301,7 +301,7 @@ export default function AssessmentForm({ onAssessmentComplete }) {
                 </div>
 
                 {voiceMetrics && (
-                  <div style={{ background: '#ffffff', border: '1px solid var(--border)', borderRadius: 'var(--radius-sm)', padding: '0.75rem 1rem', marginTop: '0.75rem' }}>
+                  <div style={{ background: '#ffffff', borderRadius: 'var(--radius-sm)', padding: '0.75rem 1rem', marginTop: '0.75rem', boxShadow: '0 2px 8px rgba(0, 0, 0, 0.04)' }}>
                     <div style={{ fontSize: '0.82rem', fontWeight: 800, color: '#000000', marginBottom: '0.25rem' }}>
                       Acoustic Stress Feature Vectors:
                     </div>
@@ -347,17 +347,17 @@ export default function AssessmentForm({ onAssessmentComplete }) {
                 </div>
                 <div className="options-group">
                   {[
-                    { id: 'balanced', label: '😊 Balanced / Calm', color: '#dcfce7', border: '#22c55e' },
-                    { id: 'apprehensive', label: '😐 Apprehensive / Tense', color: '#fef3c7', border: '#f59e0b' },
-                    { id: 'distressed', label: '😟 Severe Despair', color: '#fed7aa', border: '#f97316' },
-                    { id: 'panic', label: '⚡ Acute Panic / Overwhelm', color: '#fee2e2', border: '#ef4444' },
+                    { id: 'balanced', label: '😊 Balanced / Calm', color: '#dcfce7' },
+                    { id: 'apprehensive', label: '😐 Apprehensive / Tense', color: '#fef3c7' },
+                    { id: 'distressed', label: '😟 Severe Despair', color: '#fed7aa' },
+                    { id: 'panic', label: '⚡ Acute Panic / Overwhelm', color: '#fee2e2' },
                   ].map((m) => {
                     const isSel = currentMood === m.id;
                     return (
                       <label
                         key={m.id}
                         className={`option-label ${isSel ? 'selected' : ''}`}
-                        style={isSel ? { background: m.color, borderColor: m.border, borderWidth: '2px', boxShadow: `0 3px 10px ${m.border}40` } : {}}
+                        style={isSel ? { background: m.color, boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)' } : {}}
                       >
                         <input
                           type="radio"
@@ -386,17 +386,17 @@ export default function AssessmentForm({ onAssessmentComplete }) {
                 </div>
                 <div className="options-group">
                   {[
-                    { id: 'safe', label: '🟢 Secure / Safe', color: '#dcfce7', border: '#22c55e' },
-                    { id: 'moderate', label: '🟡 Mild Unease / Alert', color: '#fef3c7', border: '#f59e0b' },
-                    { id: 'high', label: '🟠 Active Threat / Intimidation', color: '#fed7aa', border: '#f97316' },
-                    { id: 'danger', label: '🔴 Immediate Danger', color: '#fee2e2', border: '#ef4444' },
+                    { id: 'safe', label: '🟢 Secure / Safe', color: '#dcfce7' },
+                    { id: 'moderate', label: '🟡 Mild Unease / Alert', color: '#fef3c7' },
+                    { id: 'high', label: '🟠 Active Threat / Intimidation', color: '#fed7aa' },
+                    { id: 'danger', label: '🔴 Immediate Danger', color: '#fee2e2' },
                   ].map((s) => {
                     const isSel = safetyLevel === s.id;
                     return (
                       <label
                         key={s.id}
                         className={`option-label ${isSel ? 'selected' : ''}`}
-                        style={isSel ? { background: s.color, borderColor: s.border, borderWidth: '2px', boxShadow: `0 3px 10px ${s.border}40` } : {}}
+                        style={isSel ? { background: s.color, boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)' } : {}}
                       >
                         <input
                           type="radio"
@@ -455,7 +455,7 @@ export default function AssessmentForm({ onAssessmentComplete }) {
         {/* Sidebar: Real-Time Feature Fusion & Crisis Dispatch */}
         <div>
           {/* Live Feature Fusion Monitor */}
-          <div className="content-card" style={{ borderTop: '6px solid #8b5cf6', background: 'linear-gradient(180deg, #ffffff 0%, #faf5ff 100%)', boxShadow: '0 8px 25px rgba(139, 92, 246, 0.15)' }}>
+          <div className="content-card" style={{ background: 'linear-gradient(180deg, #ffffff 0%, #faf5ff 100%)', boxShadow: '0 10px 30px rgba(139, 92, 246, 0.12)' }}>
             <div className="content-card-title">
               <span>⚖️ Feature Fusion Weight Monitor</span>
             </div>
@@ -513,7 +513,7 @@ export default function AssessmentForm({ onAssessmentComplete }) {
               </div>
             </div>
 
-            <div style={{ background: 'linear-gradient(135deg, #ffffff 0%, #f5f3ff 100%)', border: '2.5px solid #8b5cf6', borderRadius: 'var(--radius-md)', padding: '0.95rem 1.1rem', textAlign: 'center', boxShadow: '0 4px 16px rgba(139, 92, 246, 0.22)' }}>
+            <div style={{ background: 'linear-gradient(135deg, #ffffff 0%, #f5f3ff 100%)', borderRadius: 'var(--radius-md)', padding: '0.95rem 1.1rem', textAlign: 'center', boxShadow: '0 4px 16px rgba(139, 92, 246, 0.15)' }}>
               <div style={{ fontSize: '0.82rem', fontWeight: 850, color: '#000000', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
                 Estimated Feature Fusion Index
               </div>

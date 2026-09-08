@@ -142,12 +142,12 @@ export default function ObserverDashboard() {
               Longitudinal tracking across successive check-ins (e.g. 32 ➔ 41 ➔ 53 ➔ 71) detecting escalating psychological distress.
             </div>
           </div>
-          <span className="role-pill" style={{ background: '#fee2e2', border: '1px solid #fca5a5' }}>
+          <span className="role-pill" style={{ background: '#fee2e2' }}>
             Escalation Velocity Alert
           </span>
         </div>
 
-        <div style={{ display: 'flex', alignItems: 'flex-end', gap: '1.25rem', height: '110px', padding: '0.75rem 0', borderBottom: '1.5px solid var(--border)' }}>
+        <div style={{ display: 'flex', alignItems: 'flex-end', gap: '1.25rem', height: '110px', padding: '0.75rem 0' }}>
           {[
             { label: 'Baseline', score: 32, date: 'T-21 Days' },
             { label: 'Check-in 2', score: 41, date: 'T-14 Days' },

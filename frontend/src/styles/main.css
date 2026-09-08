@@ -59,11 +59,10 @@ body {
 .app-header {
   background: rgba(255, 255, 255, 0.94);
   backdrop-filter: blur(12px);
-  border-bottom: 3px solid #6366f1;
   position: sticky;
   top: 0;
   z-index: 50;
-  box-shadow: 0 4px 20px rgba(99, 102, 241, 0.12);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
 }
 
 .nav-container {
@@ -93,8 +92,7 @@ body {
   width: 44px;
   height: 44px;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.35);
-  border: 1.5px solid #ffffff;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
 }
 
 .brand-title {
@@ -106,13 +104,12 @@ body {
 
 .brand-badge {
   background: linear-gradient(135deg, #e0e7ff 0%, #ede9fe 100%);
-  border: 1.5px solid #818cf8;
   color: #000000;
   font-size: 0.75rem;
-  padding: 0.2rem 0.65rem;
+  padding: 0.25rem 0.7rem;
   border-radius: 999px;
   font-weight: 800;
-  box-shadow: 0 2px 6px rgba(99, 102, 241, 0.18);
+  box-shadow: 0 2px 6px rgba(99, 102, 241, 0.15);
 }
 
 .brand-subtitle {
@@ -127,15 +124,14 @@ body {
   align-items: center;
   gap: 0.4rem;
   background: #e0e7ff;
-  padding: 0.3rem;
+  padding: 0.35rem;
   border-radius: var(--radius-md);
-  border: 2px solid #a5b4fc;
-  box-shadow: inset 0 2px 4px rgba(99, 102, 241, 0.1);
+  box-shadow: inset 0 2px 4px rgba(99, 102, 241, 0.08);
 }
 
 .nav-tab {
   background: transparent;
-  border: 1.5px solid transparent;
+  border: none;
   padding: 0.5rem 0.95rem;
   border-radius: var(--radius-sm);
   font-size: 0.86rem;
@@ -155,8 +151,7 @@ body {
 .nav-tab.active {
   background: #ffffff;
   color: #000000;
-  box-shadow: 0 3px 10px rgba(79, 70, 229, 0.25);
-  border: 2px solid #4f46e5;
+  box-shadow: 0 4px 14px rgba(79, 70, 229, 0.22);
 }
 
 /* 108 Emergency Top Button */
@@ -165,11 +160,11 @@ body {
   align-items: center;
   gap: 0.45rem;
   background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
-  border: 2px solid #ef4444;
+  border: none;
   color: #000000;
   font-weight: 900;
   font-size: 0.88rem;
-  padding: 0.45rem 0.95rem;
+  padding: 0.5rem 1rem;
   border-radius: var(--radius-md);
   cursor: pointer;
   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
@@ -211,31 +206,28 @@ body {
   font-size: 0.85rem;
   font-weight: 700;
   background: #f8fafc;
-  padding: 0.4rem 0.85rem;
+  padding: 0.45rem 0.95rem;
   border-radius: var(--radius-sm);
-  border: 1.5px solid var(--border);
   color: #000000;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
 
 .role-pill {
   font-size: 0.72rem;
-  padding: 0.15rem 0.55rem;
+  padding: 0.18rem 0.6rem;
   border-radius: 999px;
   font-weight: 800;
   text-transform: uppercase;
   background: #e2e8f0;
-  border: 1px solid #cbd5e1;
   color: #000000;
 }
 
 .role-pill.observer {
   background: #fed7aa;
-  border-color: #fdba74;
 }
 
 .role-pill.victim {
   background: #dcfce7;
-  border-color: #bbf7d0;
 }
 
 /* Container Layout */
@@ -257,17 +249,18 @@ body {
   font-size: 0.92rem;
   font-weight: 700;
   border-radius: var(--radius-md);
-  border: 1.5px solid var(--border-dark);
+  border: none;
   cursor: pointer;
   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   color: #000000;
   background: #ffffff;
   text-decoration: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
 }
 
 .btn:hover {
   transform: translateY(-1px);
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .btn:active {
@@ -276,7 +269,7 @@ body {
 
 .btn-primary {
   background: linear-gradient(135deg, #fde047 0%, #facc15 50%, #fb923c 100%);
-  border: 2px solid #b45309;
+  border: none;
   color: #000000;
   font-weight: 900;
   box-shadow: 0 4px 14px rgba(245, 158, 11, 0.35);
@@ -289,22 +282,21 @@ body {
 }
 
 .btn-outline {
-  background: #ffffff;
-  border: 2px solid #6366f1;
+  background: #eef2ff;
+  border: none;
   color: #000000;
   font-weight: 800;
   box-shadow: 0 2px 8px rgba(99, 102, 241, 0.15);
 }
 
 .btn-outline:hover {
-  background: #eef2ff;
-  border-color: #4f46e5;
+  background: #e0e7ff;
   box-shadow: 0 4px 12px rgba(99, 102, 241, 0.25);
 }
 
 .btn-danger {
   background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
-  border: 2px solid #ef4444;
+  border: none;
   color: #000000;
   font-weight: 800;
   box-shadow: 0 2px 8px rgba(239, 68, 68, 0.25);
@@ -323,7 +315,7 @@ body {
   gap: 0.75rem;
   padding: 0.85rem 1.6rem;
   background: linear-gradient(135deg, #fee2e2 0%, #ffedd5 100%);
-  border: 2.5px solid #ef4444;
+  border: none;
   border-radius: var(--radius-md);
   color: #000000;
   font-size: 1rem;
@@ -339,7 +331,6 @@ body {
 .btn-trigger:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(239, 68, 68, 0.4);
-  border-color: #dc2626;
   background: linear-gradient(135deg, #fecaca 0%, #fed7aa 100%);
 }
 
@@ -356,7 +347,6 @@ body {
 
 .btn-trigger.active-trigger {
   background: linear-gradient(135deg, #fca5a5 0%, #fdba74 100%);
-  border-color: #b91c1c;
   box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.35);
 }
 
@@ -368,7 +358,7 @@ body {
 /* Dashboard Radiant Hero Banner */
 .hero-banner {
   background: linear-gradient(135deg, #eef2ff 0%, #e0e7ff 45%, #e0f2fe 100%);
-  border: 2px solid #818cf8;
+  border: none;
   border-radius: var(--radius-lg);
   padding: 1.6rem 2rem;
   margin-bottom: 1.75rem;
@@ -417,7 +407,7 @@ body {
 
 .hero-pill {
   background: #ffffff;
-  border: 1.5px solid #818cf8;
+  border: none;
   padding: 0.35rem 0.85rem;
   border-radius: 999px;
   font-size: 0.82rem;
@@ -426,7 +416,7 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  box-shadow: 0 2px 6px rgba(99, 102, 241, 0.12);
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.15);
 }
 
 /* Modal Overlay */
@@ -457,8 +447,8 @@ body {
   max-width: 520px;
   max-height: 90vh;
   overflow-y: auto;
-  box-shadow: var(--shadow-lg);
-  border: 1.5px solid var(--border);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  border: none;
   padding: 2rem;
   position: relative;
   transform: translateY(8px);
@@ -475,7 +465,7 @@ body {
   top: 1.25rem;
   right: 1.25rem;
   background: #f1f5f9;
-  border: 1px solid var(--border);
+  border: none;
   border-radius: 50%;
   width: 32px;
   height: 32px;

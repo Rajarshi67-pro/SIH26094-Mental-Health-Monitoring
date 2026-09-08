@@ -135,7 +135,7 @@ export default function PipelineVisualizer({ onNavigateToIntake, onNavigateToDas
             {currentDetail.desc}
           </p>
 
-          <div style={{ background: '#ffffff', border: '1.5px solid var(--border)', borderRadius: 'var(--radius-md)', padding: '1rem 1.25rem' }}>
+          <div style={{ background: '#ffffff', borderRadius: 'var(--radius-md)', padding: '1.25rem 1.5rem', boxShadow: '0 4px 16px rgba(0, 0, 0, 0.04)' }}>
             <div style={{ fontSize: '0.88rem', fontWeight: 800, color: '#000000', marginBottom: '0.5rem' }}>
               Key Operational Mechanisms & Artifacts:
             </div>

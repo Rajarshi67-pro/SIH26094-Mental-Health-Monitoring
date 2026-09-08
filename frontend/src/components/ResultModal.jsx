@@ -60,12 +60,12 @@ export default function ResultModal({ result, onClose }) {
           )}
 
           {/* 3. Temporal Trend Model (LSTM Sequence Progression) */}
-          <div style={{ marginTop: '1.5rem', textAlign: 'left', background: '#f8fafc', border: '1.5px solid var(--border)', borderRadius: 'var(--radius-md)', padding: '1.15rem' }}>
+          <div style={{ marginTop: '1.5rem', textAlign: 'left', background: '#f8fafc', borderRadius: 'var(--radius-md)', padding: '1.25rem', boxShadow: '0 2px 10px rgba(0, 0, 0, 0.04)' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.65rem', flexWrap: 'wrap', gap: '0.5rem' }}>
               <div style={{ fontSize: '0.95rem', fontWeight: 800, color: '#000000' }}>
                 📈 Temporal Trend Model (LSTM Check-In Trajectory)
               </div>
-              <span className="role-pill" style={{ background: '#fee2e2', border: '1px solid #fca5a5' }}>
+              <span className="role-pill" style={{ background: '#fee2e2' }}>
                 ↗ +18% Worsening Risk
               </span>
             </div>
@@ -75,7 +75,7 @@ export default function ResultModal({ result, onClose }) {
             </div>
 
             {/* Visual Trajectory Bar Chart */}
-            <div style={{ display: 'flex', alignItems: 'flex-end', gap: '1rem', height: '90px', padding: '0.5rem 0', borderBottom: '1.5px solid var(--border)' }}>
+            <div style={{ display: 'flex', alignItems: 'flex-end', gap: '1rem', height: '90px', padding: '0.5rem 0' }}>
               {trajectory.map((item, idx) => (
                 <div key={idx} style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', height: '100%', justifyContent: 'flex-end' }}>
                   <span style={{ fontSize: '0.78rem', fontWeight: 800, marginBottom: '0.25rem', color: '#000000' }}>
@@ -86,9 +86,16 @@ export default function ResultModal({ result, onClose }) {
                       width: '100%',
                       maxWidth: '44px',
                       height: `${Math.max(15, (item.score / 100) * 65)}px`,
-                      background: idx === trajectory.length - 1 ? '#ef4444' : '#94a3b8',
+                      background: item.score <= 35 
+                        ? 'linear-gradient(180deg, #22c55e 0%, #16a34a 100%)' 
+                        : item.score <= 45 
+                        ? 'linear-gradient(180deg, #eab308 0%, #ca8a04 100%)' 
+                        : item.score <= 55 
+                        ? 'linear-gradient(180deg, #f97316 0%, #ea580c 100%)' 
+                        : 'linear-gradient(180deg, #ef4444 0%, #dc2626 100%)',
                       borderRadius: '6px 6px 0 0',
                       transition: 'height 0.5s ease',
+                      boxShadow: idx === trajectory.length - 1 ? '0 0 12px rgba(239, 68, 68, 0.4)' : 'none',
                     }}
                   ></div>
                   <span style={{ fontSize: '0.72rem', fontWeight: 700, color: '#000000', marginTop: '0.35rem', whiteSpace: 'nowrap' }}>
