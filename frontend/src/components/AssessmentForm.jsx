@@ -272,7 +272,7 @@ export default function AssessmentForm({ onAssessmentComplete }) {
                 <span>3. Voice Analysis (Whisper STT & Acoustic Stress)</span>
               </div>
 
-              <div style={{ background: '#f8fafc', border: '1.5px solid var(--border)', borderRadius: 'var(--radius-md)', padding: '1.25rem' }}>
+              <div className="voice-recorder-box">
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1rem', marginBottom: '0.75rem' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
                     <button
@@ -336,7 +336,7 @@ export default function AssessmentForm({ onAssessmentComplete }) {
                   step="1"
                   value={sleepHours}
                   onChange={(e) => setSleepHours(Number(e.target.value))}
-                  style={{ width: '100%', accentColor: '#000000', cursor: 'pointer' }}
+                  style={{ width: '100%', height: '8px', accentColor: '#4f46e5', cursor: 'pointer', borderRadius: '4px' }}
                 />
               </div>
 
@@ -347,22 +347,29 @@ export default function AssessmentForm({ onAssessmentComplete }) {
                 </div>
                 <div className="options-group">
                   {[
-                    { id: 'balanced', label: '😊 Balanced / Calm' },
-                    { id: 'apprehensive', label: '😐 Apprehensive / Tense' },
-                    { id: 'distressed', label: '😟 Severe Despair' },
-                    { id: 'panic', label: '⚡ Acute Panic / Overwhelm' },
-                  ].map((m) => (
-                    <label key={m.id} className={`option-label ${currentMood === m.id ? 'selected' : ''}`}>
-                      <input
-                        type="radio"
-                        name="mood_select"
-                        value={m.id}
-                        checked={currentMood === m.id}
-                        onChange={() => setCurrentMood(m.id)}
-                      />
-                      {m.label}
-                    </label>
-                  ))}
+                    { id: 'balanced', label: '😊 Balanced / Calm', color: '#dcfce7', border: '#22c55e' },
+                    { id: 'apprehensive', label: '😐 Apprehensive / Tense', color: '#fef3c7', border: '#f59e0b' },
+                    { id: 'distressed', label: '😟 Severe Despair', color: '#fed7aa', border: '#f97316' },
+                    { id: 'panic', label: '⚡ Acute Panic / Overwhelm', color: '#fee2e2', border: '#ef4444' },
+                  ].map((m) => {
+                    const isSel = currentMood === m.id;
+                    return (
+                      <label
+                        key={m.id}
+                        className={`option-label ${isSel ? 'selected' : ''}`}
+                        style={isSel ? { background: m.color, borderColor: m.border, borderWidth: '2px', boxShadow: `0 3px 10px ${m.border}40` } : {}}
+                      >
+                        <input
+                          type="radio"
+                          name="mood_select"
+                          value={m.id}
+                          checked={isSel}
+                          onChange={() => setCurrentMood(m.id)}
+                        />
+                        {m.label}
+                      </label>
+                    );
+                  })}
                 </div>
               </div>
             </div>
@@ -379,22 +386,29 @@ export default function AssessmentForm({ onAssessmentComplete }) {
                 </div>
                 <div className="options-group">
                   {[
-                    { id: 'safe', label: '🟢 Secure / Safe' },
-                    { id: 'moderate', label: '🟡 Mild Unease / Alert' },
-                    { id: 'high', label: '🟠 Active Threat / Intimidation' },
-                    { id: 'danger', label: '🔴 Immediate Danger' },
-                  ].map((s) => (
-                    <label key={s.id} className={`option-label ${safetyLevel === s.id ? 'selected' : ''}`}>
-                      <input
-                        type="radio"
-                        name="safety_level"
-                        value={s.id}
-                        checked={safetyLevel === s.id}
-                        onChange={() => setSafetyLevel(s.id)}
-                      />
-                      {s.label}
-                    </label>
-                  ))}
+                    { id: 'safe', label: '🟢 Secure / Safe', color: '#dcfce7', border: '#22c55e' },
+                    { id: 'moderate', label: '🟡 Mild Unease / Alert', color: '#fef3c7', border: '#f59e0b' },
+                    { id: 'high', label: '🟠 Active Threat / Intimidation', color: '#fed7aa', border: '#f97316' },
+                    { id: 'danger', label: '🔴 Immediate Danger', color: '#fee2e2', border: '#ef4444' },
+                  ].map((s) => {
+                    const isSel = safetyLevel === s.id;
+                    return (
+                      <label
+                        key={s.id}
+                        className={`option-label ${isSel ? 'selected' : ''}`}
+                        style={isSel ? { background: s.color, borderColor: s.border, borderWidth: '2px', boxShadow: `0 3px 10px ${s.border}40` } : {}}
+                      >
+                        <input
+                          type="radio"
+                          name="safety_level"
+                          value={s.id}
+                          checked={isSel}
+                          onChange={() => setSafetyLevel(s.id)}
+                        />
+                        {s.label}
+                      </label>
+                    );
+                  })}
                 </div>
               </div>
 
@@ -441,7 +455,7 @@ export default function AssessmentForm({ onAssessmentComplete }) {
         {/* Sidebar: Real-Time Feature Fusion & Crisis Dispatch */}
         <div>
           {/* Live Feature Fusion Monitor */}
-          <div className="content-card">
+          <div className="content-card" style={{ borderTop: '6px solid #8b5cf6', background: 'linear-gradient(180deg, #ffffff 0%, #faf5ff 100%)', boxShadow: '0 8px 25px rgba(139, 92, 246, 0.15)' }}>
             <div className="content-card-title">
               <span>⚖️ Feature Fusion Weight Monitor</span>
             </div>
@@ -450,61 +464,61 @@ export default function AssessmentForm({ onAssessmentComplete }) {
             </div>
 
             <div style={{ marginBottom: '1rem' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.85rem', fontWeight: 700, marginBottom: '0.2rem' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.85rem', fontWeight: 800, marginBottom: '0.25rem' }}>
                 <span>Clinical Scales (MADRS, PHQ-9, GAD-7)</span>
                 <span>40%</span>
               </div>
               <div className="fusion-progress-bar">
-                <div className="fusion-progress-fill" style={{ width: `${Math.min(100, formNormalized)}%` }}></div>
+                <div className="fusion-progress-fill" style={{ width: `${Math.min(100, formNormalized)}%`, background: 'linear-gradient(90deg, #3b82f6, #60a5fa)' }}></div>
               </div>
             </div>
 
             <div style={{ marginBottom: '1rem' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.85rem', fontWeight: 700, marginBottom: '0.2rem' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.85rem', fontWeight: 800, marginBottom: '0.25rem' }}>
                 <span>Threat & Safety Indicators</span>
                 <span>20%</span>
               </div>
               <div className="fusion-progress-bar">
-                <div className="fusion-progress-fill" style={{ width: `${threatScore}%`, background: '#f97316' }}></div>
+                <div className="fusion-progress-fill" style={{ width: `${threatScore}%`, background: 'linear-gradient(90deg, #ef4444, #f87171)' }}></div>
               </div>
             </div>
 
             <div style={{ marginBottom: '1rem' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.85rem', fontWeight: 700, marginBottom: '0.2rem' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.85rem', fontWeight: 800, marginBottom: '0.25rem' }}>
                 <span>Sleep Deprivation & Mood Factor</span>
                 <span>15%</span>
               </div>
               <div className="fusion-progress-bar">
-                <div className="fusion-progress-fill" style={{ width: `${(sleepDistress + moodScore) / 2}%`, background: '#eab308' }}></div>
+                <div className="fusion-progress-fill" style={{ width: `${(sleepDistress + moodScore) / 2}%`, background: 'linear-gradient(90deg, #f59e0b, #fbbf24)' }}></div>
               </div>
             </div>
 
             <div style={{ marginBottom: '1rem' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.85rem', fontWeight: 700, marginBottom: '0.2rem' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.85rem', fontWeight: 800, marginBottom: '0.25rem' }}>
                 <span>NLP Text Emotion & Sentiment</span>
                 <span>15%</span>
               </div>
               <div className="fusion-progress-bar">
-                <div className="fusion-progress-fill" style={{ width: `${narrative.length > 20 ? 65 : 20}%`, background: '#3b82f6' }}></div>
+                <div className="fusion-progress-fill" style={{ width: `${narrative.length > 20 ? 65 : 20}%`, background: 'linear-gradient(90deg, #10b981, #34d399)' }}></div>
               </div>
             </div>
 
             <div style={{ marginBottom: '1.25rem' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.85rem', fontWeight: 700, marginBottom: '0.2rem' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.85rem', fontWeight: 800, marginBottom: '0.25rem' }}>
                 <span>Voice Acoustic Stress (Whisper STT)</span>
                 <span>10%</span>
               </div>
               <div className="fusion-progress-bar">
-                <div className="fusion-progress-fill" style={{ width: `${voiceRecorded ? 60 : 15}%`, background: '#8b5cf6' }}></div>
+                <div className="fusion-progress-fill" style={{ width: `${voiceRecorded ? 60 : 15}%`, background: 'linear-gradient(90deg, #8b5cf6, #a78bfa)' }}></div>
               </div>
             </div>
 
-            <div style={{ background: '#f8fafc', border: '1.5px solid var(--border)', borderRadius: 'var(--radius-md)', padding: '0.85rem 1rem', textAlign: 'center' }}>
-              <div style={{ fontSize: '0.82rem', fontWeight: 800, color: '#000000', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
+            <div style={{ background: 'linear-gradient(135deg, #ffffff 0%, #f5f3ff 100%)', border: '2.5px solid #8b5cf6', borderRadius: 'var(--radius-md)', padding: '0.95rem 1.1rem', textAlign: 'center', boxShadow: '0 4px 16px rgba(139, 92, 246, 0.22)' }}>
+              <div style={{ fontSize: '0.82rem', fontWeight: 850, color: '#000000', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
                 Estimated Feature Fusion Index
               </div>
-              <div style={{ fontSize: '2rem', fontWeight: 900, color: '#000000' }}>
-                {estimatedFusedScore} <span style={{ fontSize: '1rem', fontWeight: 700 }}>/ 100</span>
+              <div style={{ fontSize: '2.2rem', fontWeight: 950, color: '#000000' }}>
+                {estimatedFusedScore} <span style={{ fontSize: '1rem', fontWeight: 800 }}>/ 100</span>
               </div>
             </div>
           </div>

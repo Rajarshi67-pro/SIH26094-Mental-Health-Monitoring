@@ -163,8 +163,15 @@ export default function ObserverDashboard() {
                   width: '100%',
                   maxWidth: '56px',
                   height: `${(point.score / 100) * 80}px`,
-                  background: point.peak ? '#ef4444' : '#64748b',
-                  borderRadius: '6px 6px 0 0',
+                  background: point.score <= 35 
+                    ? 'linear-gradient(180deg, #22c55e 0%, #16a34a 100%)' 
+                    : point.score <= 45 
+                    ? 'linear-gradient(180deg, #eab308 0%, #ca8a04 100%)' 
+                    : point.score <= 55 
+                    ? 'linear-gradient(180deg, #f97316 0%, #ea580c 100%)' 
+                    : 'linear-gradient(180deg, #ef4444 0%, #dc2626 100%)',
+                  borderRadius: '8px 8px 0 0',
+                  boxShadow: point.peak ? '0 0 16px rgba(239, 68, 68, 0.45)' : '0 2px 6px rgba(0, 0, 0, 0.1)',
                 }}
               ></div>
               <span style={{ fontSize: '0.75rem', fontWeight: 700, color: '#000000', marginTop: '0.4rem', textAlign: 'center' }}>
