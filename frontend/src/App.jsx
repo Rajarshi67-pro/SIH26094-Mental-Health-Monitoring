@@ -5,6 +5,7 @@ import AuthModal from './components/AuthModal.jsx';
 import AssessmentForm from './components/AssessmentForm.jsx';
 import ResultModal from './components/ResultModal.jsx';
 import ObserverDashboard from './components/ObserverDashboard.jsx';
+import PipelineVisualizer from './components/PipelineVisualizer.jsx';
 
 export default function App() {
   const { user, isAuthenticated } = useAuth();
@@ -28,6 +29,11 @@ export default function App() {
       <main className="main-content">
         {currentView === 'observer' ? (
           <ObserverDashboard />
+        ) : currentView === 'pipeline' ? (
+          <PipelineVisualizer
+            onNavigateToIntake={() => setCurrentView('assessment')}
+            onNavigateToDashboard={() => setCurrentView('observer')}
+          />
         ) : (
           <AssessmentForm onAssessmentComplete={setAssessmentResult} />
         )}

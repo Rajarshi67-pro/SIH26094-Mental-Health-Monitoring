@@ -531,3 +531,95 @@
   color: #000000;
   font-weight: 800;
 }
+
+/* ==========================================================================
+   AI Architecture Pipeline Visualizer Styles
+   ========================================================================== */
+.pipeline-flow-container {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  overflow-x: auto;
+  padding: 1rem 0.5rem 1.5rem;
+  margin-bottom: 1.5rem;
+  scrollbar-width: thin;
+}
+
+.pipeline-flow-container::-webkit-scrollbar {
+  height: 6px;
+}
+
+.pipeline-flow-container::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 999px;
+}
+
+.pipeline-node-card {
+  min-width: 175px;
+  max-width: 195px;
+  flex-shrink: 0;
+  background: #ffffff;
+  border: 2px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 1.15rem 1rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.pipeline-node-card:hover {
+  transform: translateY(-3px);
+  border-color: #000000;
+  box-shadow: var(--shadow-md);
+}
+
+.pipeline-node-card.active-node {
+  background: #f8fafc;
+  border-color: #000000;
+  box-shadow: 0 0 0 2px #000000;
+}
+
+.pipeline-node-icon {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.pipeline-node-title {
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: #000000;
+  line-height: 1.3;
+}
+
+.pipeline-node-badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  background: #e2e8f0;
+  border: 1px solid #cbd5e1;
+  color: #000000;
+  text-transform: uppercase;
+}
+
+.pipeline-connector-arrow {
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: #000000;
+  flex-shrink: 0;
+  opacity: 0.6;
+}
+
+.pipeline-detail-card {
+  background: #f8fafc;
+  border: 2px solid #000000;
+  border-radius: var(--radius-lg);
+  padding: 1.5rem 1.75rem;
+  box-shadow: var(--shadow-sm);
+}
+

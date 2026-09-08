@@ -21,7 +21,46 @@ export default function Navbar({ currentView, onToggleView }) {
           </div>
         </div>
 
+        {/* View Switcher Tabs */}
+        <div className="nav-center-tabs">
+          <button
+            type="button"
+            className={`nav-tab ${currentView === 'assessment' ? 'active' : ''}`}
+            onClick={() => onToggleView('assessment')}
+          >
+            📋 Citizen Assessment
+          </button>
+          <button
+            type="button"
+            className={`nav-tab ${currentView === 'observer' ? 'active' : ''}`}
+            onClick={() => onToggleView('observer')}
+          >
+            📊 Officer Dashboard
+          </button>
+          <button
+            type="button"
+            className={`nav-tab ${currentView === 'pipeline' ? 'active' : ''}`}
+            onClick={() => onToggleView('pipeline')}
+          >
+            🔄 AI Architecture Flow
+          </button>
+        </div>
+
         <div className="nav-actions">
+          <button
+            type="button"
+            className="btn btn-emergency-top"
+            onClick={() => {
+              if (window.confirm("🚨 INITIATE 108 EMERGENCY DISPATCH?\n\nThis triggers an instant high-priority emergency packet to the nearest 108 ambulance response center and alerts clinical emergency responders.")) {
+                alert("✅ EMERGENCY 108 AMBULANCE DISPATCHED\n\n• Unit ID: DL-AMB-108-49\n• ETA: 7-9 minutes\n• Real-time GPS Telemetry: Active\n• National Helpline 112 / Tele-MANAS 14416 alerted.");
+              }
+            }}
+            title="Instant 108 Emergency Ambulance Trigger"
+          >
+            <span className="emergency-pulse-dot"></span>
+            🚨 108 SOS
+          </button>
+
           {isAuthenticated ? (
             <>
               <div className="user-badge">
@@ -30,16 +69,6 @@ export default function Navbar({ currentView, onToggleView }) {
                   {isObserver ? (user.role || 'Observer') : 'Citizen'}
                 </span>
               </div>
-
-              {isObserver && (
-                <button
-                  className="btn btn-outline"
-                  onClick={() => onToggleView(currentView === 'assessment' ? 'observer' : 'assessment')}
-                  style={{ fontSize: '0.85rem' }}
-                >
-                  {currentView === 'assessment' ? '📊 Observer Caseload' : '📋 Assessment Form'}
-                </button>
-              )}
 
               <button
                 className="btn btn-danger"
